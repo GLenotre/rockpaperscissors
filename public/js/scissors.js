@@ -60,8 +60,13 @@ function decreaseSeconds() {
     Seconds = totalSeconds % 60;
     if (totalSeconds >= 1) {
       totalSeconds -= 1;
-      $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-    } else {
+        $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+          if (totalSeconds < 10) {
+          $("#timer").fadeOut(500);
+          $("#timer").fadeIn(500);
+        }
+    } 
+    else {
       $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
       clearInterval(scissorsGame);  
       TimerOn = false;
