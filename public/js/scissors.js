@@ -2,7 +2,7 @@
 'use strict';
 
 var scissorsGame;
-var totalSeconds = 60;
+var totalSeconds = 30;
 var TimerOn = false;
 var Mins = Math.floor(totalSeconds / 60);
 var Seconds = totalSeconds % 60;
@@ -45,3 +45,30 @@ function decreaseSeconds() {
     console.log(Mins);
     console.log(Seconds);
   }
+
+  $('#play').click(function(){
+  if (TimerOn){
+  return;
+} else {
+  TimerOn = true;
+  scissorsGame = setInterval(function() {
+    Mins = Math.floor(totalSeconds / 60);
+    Seconds = totalSeconds % 60;
+    if (totalSeconds >= 1) {
+      totalSeconds -= 1;
+      $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+    } else {
+      $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+      clearInterval(scissorsGame);  
+    }
+    console.log(totalSeconds);
+    console.log(Mins);
+    console.log(Seconds);
+  }, 1000);  
+} // closes first if 
+});
+
+// function timerStop() {
+//   clearInterval(scissorsGame);   // pauses the interval
+//   TimerOn = false;
+// }
