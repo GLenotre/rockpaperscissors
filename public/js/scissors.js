@@ -18,12 +18,14 @@ function increaseMinutes() {
   }
 
 function decreaseMinutes() {
-    totalSeconds -= 60;
-    Mins = Math.floor(totalSeconds / 60);
-    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-    console.log(totalSeconds);
-    console.log(Mins);
-    console.log(Seconds);
+    if (totalSeconds >=60) {
+	    totalSeconds -= 60;
+	    Mins = Math.floor(totalSeconds / 60);
+	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+	    console.log(totalSeconds);
+	    console.log(Mins);
+	    console.log(Seconds);	
+    }
   }
 
  function increaseSeconds() {
@@ -37,13 +39,15 @@ function decreaseMinutes() {
   }
 
 function decreaseSeconds() {
-    totalSeconds -= 1;
-    Mins = Math.floor(totalSeconds / 60);
-    Seconds = Math.floor(totalSeconds % 60);
-    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-    console.log(totalSeconds);
-    console.log(Mins);
-    console.log(Seconds);
+    if (totalSeconds >0) {
+	    totalSeconds -= 1;
+	    Mins = Math.floor(totalSeconds / 60);
+	    Seconds = Math.floor(totalSeconds % 60);
+	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+	    console.log(totalSeconds);
+	    console.log(Mins);
+	    console.log(Seconds);
+	  }
   }
 
   $('#play').click(function(){
@@ -60,10 +64,12 @@ function decreaseSeconds() {
     } else {
       $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
       clearInterval(scissorsGame);  
+      TimerOn = false;
     }
     console.log(totalSeconds);
     console.log(Mins);
     console.log(Seconds);
+    console.log(TimerOn);
   }, 1000);  
 } // closes first if 
 });
