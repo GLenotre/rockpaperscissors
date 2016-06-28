@@ -13,9 +13,6 @@ $(function() {
 	    totalSeconds += 60;
 	    Mins = Math.floor(totalSeconds / 60);
 	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-	    console.log(totalSeconds);
-	    console.log(Mins);
-	    console.log(Seconds);
 	  }
 
 	function decreaseMinutes() {
@@ -23,9 +20,6 @@ $(function() {
 		    totalSeconds -= 60;
 		    Mins = Math.floor(totalSeconds / 60);
 		    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-		    console.log(totalSeconds);
-		    console.log(Mins);
-		    console.log(Seconds);	
 	    }
 	  }
 
@@ -34,9 +28,6 @@ $(function() {
 	    Mins = Math.floor(totalSeconds / 60);
 		Seconds = Math.floor(totalSeconds % 60);
 	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-	    console.log(totalSeconds);
-	    console.log(Mins);
-	    console.log(Seconds);
 	  }
 
 	function decreaseSeconds() {
@@ -45,9 +36,6 @@ $(function() {
 		    Mins = Math.floor(totalSeconds / 60);
 		    Seconds = Math.floor(totalSeconds % 60);
 		    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-		    console.log(totalSeconds);
-		    console.log(Mins);
-		    console.log(Seconds);
 		  }
 	  }
 
@@ -113,5 +101,4 @@ $(function() {
 	} // ends function winner
 
 	winner();
-
 });
