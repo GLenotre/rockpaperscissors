@@ -8,36 +8,41 @@ $(function() {
 	var Mins = Math.floor(totalSeconds / 60);
 	var Seconds = totalSeconds % 60;
 	$("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+	var win = 0;
+	var lose = 0;
+	var draw = 0;
 
-	function increaseMinutes() {
-	    totalSeconds += 60;
-	    Mins = Math.floor(totalSeconds / 60);
-	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-	  }
+	$("#sixtyMore").on("click", function(){
+		totalSeconds += 60;
+		Mins = Math.floor(totalSeconds / 60);
+		$("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+		console.log(totalSeconds);
+	});
 
-	function decreaseMinutes() {
-	    if (totalSeconds >=60) {
+	$("#sixtyLess").on("click", function(){
+		if (totalSeconds >=60) {
 		    totalSeconds -= 60;
 		    Mins = Math.floor(totalSeconds / 60);
-		    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-	    }
-	  }
-
-	 function increaseSeconds() {
+			$("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+		}
+		console.log(totalSeconds);
+	});
+	
+	$("#oneMore").on("click", function(){
 	    totalSeconds += 1;
-	    Mins = Math.floor(totalSeconds / 60);
-		Seconds = Math.floor(totalSeconds % 60);
-	    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
-	  }
+	    Seconds = totalSeconds % 60;
+		$("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+		console.log(totalSeconds);
+	});
 
-	function decreaseSeconds() {
+	$("#oneLess").on("click", function(){
 	    if (totalSeconds >0) {
 		    totalSeconds -= 1;
-		    Mins = Math.floor(totalSeconds / 60);
-		    Seconds = Math.floor(totalSeconds % 60);
-		    $("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
+			Seconds = totalSeconds % 60;
+			$("#timer").text(Mins + ":" + (Seconds < 10 ? "0" + Seconds : Seconds));
 		  }
-	  }
+		  console.log(totalSeconds);
+	});
 
 	  $('#play').click(function(){
 	    if (TimerOn){
@@ -60,45 +65,55 @@ $(function() {
 	        TimerOn = false;
 	        }
 	    }, 1000);  //ends setinterveral
-	    
 	});  //ends click function
 
-	    function winner() {
+	    $('.choice').click(function(e){
+	    var userChoice = $(this).data('id');
+		console.log(userChoice);
+	    if (TimerOn === true) {
+		
+		var botChoice = Math.floor((Math.random() * 3)+1);
+		console.log(botChoice);
 
-		    $('.choice').click(function(e){
-		    var userChoice = $(this).data('id');
-			console.log(userChoice);
-		    if (TimerOn == true) {
-			
-			var botChoice = Math.floor((Math.random() * 3)+1);
+		    if (userChoice === botChoice) {
+		        draw++;
+		    	$('.draw').html('Draw: ' + draw); 
+		    }
 
-			    if (userChoice === botChoice)
-			        $('#draw').get(0).play();
-
-			    if (userChoice === 2) {
-			        if (botChoice == 1) {
-			        $('#win').get(0).play();
-			    } else if (botChoice === 3) {
-			        $('#lose').get(0).play();
-			    }
-			    
-			    } else if (userChoice === 3) {
-			    if (botChoice == 1) {
-			      $('#lose').get(0).play();
-			    } else if (botChoice === 2) {
-			      $('#win').get(0).play();
-			    }
-			    
-				} else if(userChoice == 1) {
-			    if (botChoice === 2) {
-			      $('#lose').get(0).play();
-			    } else if (botChoice === 3) {
-			      $('#win').get(0).play();
-			    }
-		    	}  // ends last elseif
-		    }  // ends if TimerOn condition
-	    });  // ends click function
-	} // ends function winner
-
-	winner();
+		    if (userChoice === 2) {
+		        if (botChoice === 1) {
+		        win++;
+		        $('.win').html('Win: ' + win);   
+		        // $('.win')[0].play();
+		         
+		        } else if (botChoice === 3) {
+		        lose++;
+		        $('.lose').html('Lose: ' + lose);
+		        // $('.lose')[0].play();
+		        }
+		    
+		    } else if (userChoice === 3) {
+		        if (botChoice === 1) {
+		    	lose++;
+		        $('.lose').html('Lose: ' + lose);
+		        // $('.lose')[0].play();
+		        } else if (botChoice === 2) {
+		        win++;
+		        $('.win').html('Win: ' + win);
+		        // $('.win')[0].play();
+		    }
+		    
+			} else if(userChoice === 1) {
+		    if (botChoice === 2) {
+		        lose++;
+		        $('.lose').html('Lose: ' + lose);
+		        // $('.lose')[0].play();
+		    } else if (botChoice === 3) {
+		    	win++;
+		        $('.win').html('Win: ' + win); 
+		        // $('.win')[0].play();
+		    }
+	    	}  // ends last elseif
+	    }  // ends if TimerOn condition
+    });  // ends click function
 });
