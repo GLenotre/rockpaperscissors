@@ -45,10 +45,16 @@ $(function() {
 	});
 
 	  $('#play').click(function(){
-	    if (TimerOn){
-	    return;
-	    }
+	    if (!TimerOn) {
 	    TimerOn = true;
+	    totalSeconds = 30;
+	    win = 0;
+		$('.win').html('Win: ' + win); 
+	    lose = 0;
+	    $('.lose').html('Lose: ' + lose);
+	    draw = 0;
+	    $('.draw').html('Draw: ' + draw); 
+
 	    scissorsGame = setInterval(function() {
 	        Mins = Math.floor(totalSeconds / 60);
 	        Seconds = totalSeconds % 60;
@@ -65,6 +71,7 @@ $(function() {
 	        TimerOn = false;
 	        }
 	    }, 1000);  //ends setinterveral
+		} // ends if statement
 	});  //ends click function
 
 	    $('.choice').click(function(e){
