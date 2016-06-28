@@ -2,15 +2,17 @@
 
 body {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     font-family: sans-serif;
+    margin: 20px;
 }
 
 .seconds, #play, .choice {
 	background-color: navy;
 	color: white;
 	height: auto;
+	margin: 5px;
 }
 
 
