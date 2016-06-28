@@ -8,34 +8,36 @@
     <link rel="stylesheet" href="css/scissors.css">
 </head>
 <body>
-	<h2>Rock Paper Scissors</h2>
+	<h2 class="title">Rock Paper Scissors</h2>
 
-	<button id="play">Play</button>
-	
-	<div>
-		<button type="button" class="seconds" id="sixtyMore">+</button>
-		<button type="button" class="seconds" id="sixtyLess">-</button>
-		<span id="timer"></span>
-		<button type="button" class="seconds" id="oneMore">+</button>
-		<button type="button" class="seconds" id="oneLess">-</button>
-	</div>
-	
-	<div>
-		<button type="button" class ="choice" data-id="1">Rock</button> 
-		<button type="button" class ="choice" data-id="2">Paper</button> 
-		<button type="button" class ="choice" data-id="3">Scissors</button> 
-	</div>
+	<!-- <div class="w3-card"> -->
+		<button id="play">Play</button>&nbsp
+		
+		<div>
+			<button type="button" class="seconds" id="sixtyMore">+</button>
+			<button type="button" class="seconds" id="sixtyLess">-</button>
+			<div id="timer"></div>
+			<button type="button" class="seconds" id="oneMore">+</button>
+			<button type="button" class="seconds" id="oneLess">-</button>
+		</div>
+		
+		<div>
+			<button type="button" class ="choice" data-id="1">Rock</button> 
+			<button type="button" class ="choice" data-id="2">Paper</button> 
+			<button type="button" class ="choice" data-id="3">Scissors</button> 
+		</div>
 
-	<div>
-		<p class="win">Win: 0</p>
-		<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467061121/337049__shinephoenixstormcrow__320655-rhodesmas-level-up-01_a3kred.mp3" class="win"></audio> -->
-		
-		<p class="lose">Loss: 0</p>
-		<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467061195/249561__surn-thing__lose_d3xypy.wav" class="lose"></audio> -->
-		
-		<p class="draw">Draw: 0</p>
-		<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467086917/252257__reitanna__weird-screech_jhggbb.wav" class="draw"></audio> -->
-	</div>
+		<div class = "score">
+			<div class = "win">Win: 0</div>
+			<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467061121/337049__shinephoenixstormcrow__320655-rhodesmas-level-up-01_a3kred.mp3" class="win"></audio> -->
+			
+			<div class = "lose">Loss: 0</div>
+			<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467061195/249561__surn-thing__lose_d3xypy.wav" class="lose"></audio> -->
+			
+			<div class = "draw">Draw: 0</div>
+			<!-- <audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467086917/252257__reitanna__weird-screech_jhggbb.wav" class="draw"></audio> -->
+		</div>
+	<!-- </div -->
 	
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 	<script src="/js/scissors.js"></script>

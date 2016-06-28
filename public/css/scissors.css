@@ -1,2 +1,19 @@
-scissors.css
 
+
+body {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.seconds, #play, .choice {
+	background-color: navy;
+	color: white;
+	height: auto;
+}
+
+
+.score {
+		box-shadow: rgba(0,0,0,0.50) 0 -1px 10px 0;
+	}
