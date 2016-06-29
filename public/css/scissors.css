@@ -1,4 +1,9 @@
 
+body {
+	background-image: url("/img/rsz_11rsz_d739bf6403.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 body {
     display: flex;
@@ -8,8 +13,12 @@ body {
     margin: 20px;
 }
 
+#timer {
+	margin-left: 20px;
+}
+
 .seconds, #play {
-	background-color: navy;
+	background-color: black;
 	color: white;
 	height: auto;
 	margin: 5px;

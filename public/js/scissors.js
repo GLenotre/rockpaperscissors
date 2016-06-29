@@ -85,42 +85,44 @@ $(function() {
 		    if (userChoice === botChoice) {
 		        draw++;
 		    	$('.draw').html('Draw: ' + draw); 
+		    	$('#drawSound')[0].play();
 		    }
 
 		    if (userChoice === 2) {
 		        if (botChoice === 1) {
 		        win++;
 		        $('.win').html('Win: ' + win);   
-		        // $('.win')[0].play();
+		        $('#winSound')[0].play();
 		         
 		        } else if (botChoice === 3) {
 		        lose++;
 		        $('.lose').html('Lose: ' + lose);
-		        // $('.lose')[0].play();
+		        $('#loseSound')[0].play();
 		        }
 		    
 		    } else if (userChoice === 3) {
 		        if (botChoice === 1) {
 		    	lose++;
 		        $('.lose').html('Lose: ' + lose);
-		        // $('.lose')[0].play();
+		        $('#loseSound')[0].play();
 		        } else if (botChoice === 2) {
 		        win++;
 		        $('.win').html('Win: ' + win);
-		        // $('.win')[0].play();
+		        $('#winSound')[0].play();
 		    }
 		    
 			} else if(userChoice === 1) {
 		    if (botChoice === 2) {
 		        lose++;
 		        $('.lose').html('Lose: ' + lose);
-		        // $('.lose')[0].play();
+		        $('#loseSound')[0].play();
 		    } else if (botChoice === 3) {
 		    	win++;
 		        $('.win').html('Win: ' + win); 
-		        // $('.win')[0].play();
+		        $('#winSound')[0].play();
 		    }
 	    	}  // ends last elseif
 	    }  // ends if TimerOn condition
+
     });  // ends click function
 });
