@@ -10,7 +10,7 @@
 <body>
 	<h2 class="title">Rock Paper Scissors</h2>
 
-		<button id="play">Play</button>&nbsp
+		<button class="play">Play</button>&nbsp
 		
 		<div>
 			<button type="button" class="seconds" id="sixtyMore">+</button>
@@ -20,8 +20,8 @@
 			<button type="button" class="seconds" id="oneLess">-</button>
 		</div>
 		
+		<h3>You</h3>
 		<div>
-			 
 			<img src="/img/rock-1.png" class ="choice" data-id="1" alt="rock">
 			<img src="/img/paper-1.png" class ="choice" data-id="2" alt="paper">
 			<img src="/img/scissors-1.png" class ="choice" data-id="3" alt="scissors">
@@ -36,6 +36,12 @@
 			
 			<div class = "draw">Draw: 0</div>
 			<audio src="http://res.cloudinary.com/dqbyekylp/video/upload/v1467086917/252257__reitanna__weird-screech_jhggbb.wav" type="audio/wav" id="drawSound"></audio>
+		</div>
+
+		<h3>Bot</h3>
+			<img src="/img/rock-1.png" class ="botChoice"  id ="botChoice1" alt="rock">
+			<img src="/img/paper-1.png" class ="botChoice"  id="botChoice2" alt="paper">
+			<img src="/img/scissors-1.png" class ="botChoice" id="botChoice3" alt="scissors">
 		</div>
 	
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>

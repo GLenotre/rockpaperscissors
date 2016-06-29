@@ -17,8 +17,8 @@ body {
 	margin-left: 20px;
 }
 
-.seconds, #play {
-	background-color: black;
+.seconds, .play {
+	background-color: grey;
 	color: white;
 	height: auto;
 	margin: 5px;
