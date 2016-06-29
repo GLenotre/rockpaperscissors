@@ -57,7 +57,6 @@ $(function() {
 			if (sessionStart) {  // if the User already has played a game, then use inputNumber
 				if (!timerOn) {
 			    timerOn = true;
-			    console.log(inputNumber);
 			    scissorsGame = setInterval(function() {
 			        Mins = Math.floor(inputNumber / 60);
 			        Seconds = inputNumber % 60;
